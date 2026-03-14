@@ -462,6 +462,9 @@ export const specialKeyMap = new Map([
   ['{arrowleft}', 'ArrowLeft'],
   ['{arrowdown}', 'ArrowDown'],
   ['{arrowup}', 'ArrowUp'],
+  ['{altright}', 'AltRight'],
+  ['{altright_qwertz}', 'AltRight'],
+  ['{altright_ch}', 'AltRight'],
 
   // QWERTZ / DE
   ['{controlleft_qwertz}', 'ControlLeft'],
