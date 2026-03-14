@@ -47,7 +47,7 @@ export const VirtualKeyboard = () => {
     { value: 'en', label: 'English' },
     { value: 'fr', label: 'French' },
     { value: 'de', label: 'German' },
-    { value: 'ch', label: 'Swiss German' }, // Added this line
+    { value: 'ch-de', label: 'Swiss German' },
     { value: 'ru', label: 'Russian' },
     { value: 'ko', label: 'Korean' },
     { value: 'ja', label: 'Japanese' }
@@ -70,7 +70,7 @@ export const VirtualKeyboard = () => {
       ['en', 'default'],
       ['ru', 'rus'],
       ['de', 'qwertz'],
-      ['ch', 'swiss'],
+      ['ch-de', 'ch-de'],
       ['fr', 'azerty'],
       ['ko', 'ko'],
       ['ja', 'ja']
@@ -147,10 +147,9 @@ export const VirtualKeyboard = () => {
       return getKeycode(base);
     }
     
-    if (keyboardLanguage === 'ch' && key.endsWith('_ch')) {
+    if (keyboardLanguage === 'ch-de' && key.endsWith('_ch')) {
       const base = key.replace('_ch', '');
-    
-      // The Swiss layout is also QWERTZ, so we swap Y and Z positions
+
       if (base === 'KeyZ') return getKeycode('KeyY');
       if (base === 'KeyY') return getKeycode('KeyZ');
 
@@ -235,7 +234,7 @@ export const VirtualKeyboard = () => {
   }
 
   return (
-    <Drawer.Root open={isKeyboardOpen} onOpenChange={setIsKeyboardOpen} modal={false}>
+    <Drawer.Root open={true} onOpenChange={setIsKeyboardOpen} modal={false}>
       <Drawer.Portal>
         <Drawer.Content
           className={clsx(
