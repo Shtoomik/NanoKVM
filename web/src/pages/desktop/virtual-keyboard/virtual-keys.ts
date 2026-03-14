@@ -37,6 +37,14 @@ export const keyboardOptions = {
       '{shiftleft} IntlBackslash_qwertz KeyY_qwertz KeyX KeyC KeyV KeyB KeyN KeyM Comma_qwertz Period_qwertz Slash_qwertz {shiftright}',
       '{controlleft_qwertz} {winleft} {altleft} {space} {altright_qwertz} {winright} {menu} {controlright_qwertz}'
     ],
+    swiss: [
+      '{escape} F1 F2 F3 F4 F5 F6 F7 F8 F9 F10 F11 F12',
+      'Backquote_ch Digit1_ch Digit2_ch Digit3_ch Digit4_ch Digit5_ch Digit6_ch Digit7_ch Digit8_ch Digit9_ch Digit0_ch Minus_ch Equal_ch {backspace}',
+      '{tab} KeyQ KeyW KeyE KeyR KeyT KeyZ KeyU KeyI KeyO KeyP BracketLeft_ch BracketRight_ch {enter}',
+      '{capslock} KeyA KeyS KeyD KeyF KeyG KeyH KeyJ KeyK KeyL Semicolon_ch Quote_ch Backslash_ch',
+      '{shiftleft} IntlBackslash_ch KeyY KeyX KeyC KeyV KeyB KeyN KeyM Comma_ch Period_ch Slash_ch {shiftright}',
+      '{controlleft} {winleft} {altleft} {space} {altright} {winright} {menu} {controlright}'
+    ],
     azerty: [
       '{escape} F1 F2 F3 F4 F5 F6 F7 F8 F9 F10 F11 F12',
       'Backquote_azerty Digit1_azerty Digit2_azerty Digit3_azerty Digit4_azerty Digit5_azerty Digit6_azerty Digit7_azerty Digit8_azerty Digit9_azerty Digit0_azerty Minus_azerty Equal_azerty {backspace}',
@@ -78,6 +86,30 @@ export const keyboardOptions = {
     Minus: '_<br/>-',
     Equal: '+<br/>=',
     '{backspace}': 'Backspace',
+
+    // Swiss German (CH-DE)
+    Backquote_ch: '§<br/>°',
+    Digit1_ch: '1<br/>+',
+    Digit2_ch: '2<br/>"',
+    Digit3_ch: '3<br/>*',
+    Digit4_ch: '4<br/>ç',
+    Digit5_ch: '5<br/>%',
+    Digit6_ch: '6<br/>&',
+    Digit7_ch: '7<br/>/',
+    Digit8_ch: '8<br/>(',
+    Digit9_ch: '9<br/>)',
+    Digit0_ch: '0<br/>=',
+    Minus_ch: '\'<br/>?',
+    Equal_ch: '^<br/>`',
+    BracketLeft_ch: 'ü<br/>è',
+    BracketRight_ch: '¨<br/>!',
+    Semicolon_ch: 'ö<br/>é',
+    Quote_ch: 'ä<br/>à',
+    Backslash_ch: '$<br/>£',
+    IntlBackslash_ch: '&lt;<br/>&gt;',
+    Comma_ch: ',<br/>;',
+    Period_ch: '.<br/>:',
+    Slash_ch: '-<br/>_',
 
     Backquote_qwertz: '^<br/>°',
     Digit1_qwertz: '1<br/>!',
@@ -307,7 +339,6 @@ export const keyboardOptions = {
     Slash_ja: '/',
 
     // AZERTY specific display keys
-    // Row 1
     Backquote_azerty: '&#60;<br/>&#62;',
     Digit1_azerty: '&<br/>1',
     Digit2_azerty: 'é<br/>2',
@@ -322,7 +353,6 @@ export const keyboardOptions = {
     Minus_azerty: ')<br/>]',
     Equal_azerty: '=<br/>}',
 
-    // Row 2
     KeyA_azerty: 'A',
     KeyZ_azerty: 'Z',
     KeyE_azerty: 'E<br/>€',
@@ -337,7 +367,6 @@ export const keyboardOptions = {
     BracketRight_azerty: '£<br/>$',
     Backslash_azerty: 'µ<br/>*',
 
-    // Row 3
     KeyQ_azerty: 'Q',
     KeyS_azerty: 'S',
     KeyD_azerty: 'D',
@@ -350,7 +379,6 @@ export const keyboardOptions = {
     Semicolon_azerty: 'M',
     Quote_azerty: '%<br/>ù',
 
-    // Row 4
     KeyW_azerty: 'W',
     KeyX_azerty: 'X',
     KeyC_azerty: 'C',
@@ -362,14 +390,13 @@ export const keyboardOptions = {
     Period_azerty: '/<br/>:',
     Slash_azerty: '§<br/>!'
   },
-  // Enable layout-specific display
   mergeDisplay: true,
   layoutCandidates: {
     default: 'default',
     shift: 'shift',
-    azerty: 'azerty'
+    azerty: 'azerty',
+    swiss: 'swiss'
   }
-  // ...remaining options...
 };
 
 // control keys
@@ -383,7 +410,6 @@ export const keyboardControlPadOptions = {
       '{delete} {end} {pagedown}'
     ]
   },
-
   display: {
     '{prtscr}': 'PrtScr',
     '{scrolllock}': 'Lock',
@@ -438,7 +464,7 @@ export const specialKeyMap = new Map([
   ['{arrowdown}', 'ArrowDown'],
   ['{arrowup}', 'ArrowUp'],
 
-  //DE
+  // QWERTZ / DE
   ['{controlleft_qwertz}', 'ControlLeft'],
   ['{controlright_qwertz}', 'ControlRight'],
   ['{altright_qwertz}', 'AltRight']
@@ -456,8 +482,6 @@ export const modifierKeys = [
   '{altright}',
   '{metaright}',
   '{winright}',
-
-  // DE-spezifische Modifier-Tokens (für qwertz-Layout)
   '{controlleft_qwertz}',
   '{controlright_qwertz}',
   '{altright_qwertz}'
@@ -485,5 +509,29 @@ export const doubleKeys = [
   'Quote',
   'Comma',
   'Period',
-  'Slash'
+  'Slash',
+  
+  // Swiss double keys
+  'Backquote_ch',
+  'Digit1_ch',
+  'Digit2_ch',
+  'Digit3_ch',
+  'Digit4_ch', 
+  'Digit5_ch',
+  'Digit6_ch',
+  'Digit7_ch',
+  'Digit8_ch',
+  'Digit9_ch', 
+  'Digit0_ch',
+  'Minus_ch',
+  'Equal_ch',
+  'BracketLeft_ch',
+  'BracketRight_ch',
+  'Semicolon_ch',
+  'Quote_ch',
+  'Backslash_ch',
+  'IntlBackslash_ch', 
+  'Comma_ch',
+  'Period_ch',
+  'Slash_ch'
 ];
