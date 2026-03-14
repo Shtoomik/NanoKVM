@@ -47,6 +47,7 @@ export const VirtualKeyboard = () => {
     { value: 'en', label: 'English' },
     { value: 'fr', label: 'French' },
     { value: 'de', label: 'German' },
+    { value: 'ch', label: 'Swiss German' }, // Added this line
     { value: 'ru', label: 'Russian' },
     { value: 'ko', label: 'Korean' },
     { value: 'ja', label: 'Japanese' }
@@ -69,6 +70,7 @@ export const VirtualKeyboard = () => {
       ['en', 'default'],
       ['ru', 'rus'],
       ['de', 'qwertz'],
+      ['ch', 'swiss'],
       ['fr', 'azerty'],
       ['ko', 'ko'],
       ['ja', 'ja']
@@ -144,6 +146,13 @@ export const VirtualKeyboard = () => {
       // all other labels use their own code
       return getKeycode(base);
     }
+    
+    if (keyboardLanguage === 'ch' && key.endsWith('_ch')) {
+      const base = key.replace('_ch', '');
+    
+      // The Swiss layout is also QWERTZ, so we swap Y and Z positions
+      if (base === 'KeyZ') return getKeycode('KeyY');
+      if (base === 'KeyY') return getKeycode('KeyZ');
 
     if (keyboardLanguage === 'ko' && key.endsWith('_ko')) {
       const base = key.replace('_ko', '');
