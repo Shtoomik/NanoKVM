@@ -153,6 +153,7 @@ export const VirtualKeyboard = () => {
       // The Swiss layout is also QWERTZ, so we swap Y and Z positions
       if (base === 'KeyZ') return getKeycode('KeyY');
       if (base === 'KeyY') return getKeycode('KeyZ');
+    }
 
     if (keyboardLanguage === 'ko' && key.endsWith('_ko')) {
       const base = key.replace('_ko', '');
