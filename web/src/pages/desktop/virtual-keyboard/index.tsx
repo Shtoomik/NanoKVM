@@ -63,7 +63,7 @@ export const VirtualKeyboard = () => {
     if (language && languages.some((lng) => lng.value === language)) {
       setKeyboardLanguage(language);
     }
-  }, []);
+  }, [languages]);
 
   useEffect(() => {
     const layoutMap = new Map([
