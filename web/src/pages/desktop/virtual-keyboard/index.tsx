@@ -234,7 +234,7 @@ export const VirtualKeyboard = () => {
   }
 
   return (
-    <Drawer.Root open={true} onOpenChange={setIsKeyboardOpen} modal={false}>
+    <Drawer.Root open={isKeyboardOpen} onOpenChange={setIsKeyboardOpen} modal={false}>
       <Drawer.Portal>
         <Drawer.Content
           className={clsx(
